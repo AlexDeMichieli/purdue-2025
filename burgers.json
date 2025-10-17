@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Classic Burger",
+    "description": "Our signature beef patty with lettuce, tomato, onion and special sauce",
+    "price": 8.99
+  },
+  {
+    "id": 2,
+    "name": "Cheese Burger",
+    "description": "Classic burger with melted cheddar cheese",
+    "price": 9.99
+  },
+  {
+    "id": 3,
+    "name": "Bacon Burger",
+    "description": "Classic burger topped with crispy bacon",
+    "price": 10.99
+  },
+  {
+    "id": 4,
+    "name": "Mushroom Swiss",
+    "description": "Beef patty with sautéed mushrooms and Swiss cheese",
+    "price": 11.99
+  },
+  {
+    "id": 5,
+    "name": "Veggie Burger",
+    "description": "Plant-based patty with avocado, lettuce and tomato",
+    "price": 9.99
+  },
+  {
+    "id": 6,
+    "name": "Double Trouble",
+    "description": "Two beef patties with double cheese and all the fixings",
+    "price": 13.99
+  }
+]
