@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Counter Component matches snapshot 1`] = `
+<div>
+  <div
+    class="counter"
+  >
+    <h2>
+      Counter Component
+    </h2>
+    <div
+      class="count-display"
+      data-testid="count-display"
+    >
+      Count: 
+      5
+    </div>
+    <div
+      class="button-group"
+    >
+      <button
+        data-testid="decrement-btn"
+      >
+        - 
+        2
+      </button>
+      <button
+        data-testid="increment-btn"
+      >
+        + 
+        2
+      </button>
+      <button
+        data-testid="reset-btn"
+      >
+        Reset
+      </button>
+      <button
+        data-testid="load-btn"
+      >
+        Load Remote
+      </button>
+    </div>
+    <div
+      class="history"
+    >
+      History: 
+      5
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+/* Ensure Tailwind's box model doesn't interfere with general styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
