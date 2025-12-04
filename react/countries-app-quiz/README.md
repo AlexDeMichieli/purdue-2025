@@ -66,3 +66,42 @@ Optional Enhancements:
 Add a timer for each question to increase difficulty.
 Track and display the number of questions answered.
 Add animations or transitions for better user experience.
+
+## Application Flow
+
+```mermaid
+flowchart TD
+    A[App Start] --> B[Fetch Countries from API]
+    B --> C{Loading?}
+    C -->|Yes| D[Show Loading State]
+    C -->|No| E{Error?}
+    E -->|Yes| F[Show Error Message]
+    E -->|No| G[Display Countries List]
+    
+    G --> H[User Searches Countries]
+    H --> I[Filter Countries by Name/Region]
+    I --> G
+    
+    G --> J[User Selects Country]
+    J --> K[Navigate to Country Detail Page]
+    K --> L[Display Country Information]
+    L --> M[Show Flag, Population, Capital, etc.]
+    L --> N[Show Border Countries]
+    N --> O[User Clicks Border Country]
+    O --> K
+    
+    K --> P[User Clicks Back Button]
+    P --> G
+    
+    G --> Q[User Toggles Dark/Light Mode]
+    Q --> R[Apply Theme to Entire App]
+    R --> G
+```
+
+## Features
+
+- Browse all countries with search and filter functionality
+- View detailed information about each country
+- Navigate between border countries
+- Dark/Light theme toggle
+- Responsive design
