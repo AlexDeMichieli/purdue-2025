@@ -13,6 +13,8 @@
 - Create and execute a basic stored procedure
 - Modify stored procedures to use input parameters
 - Update stored procedure logic with additional conditions
+- Use OUT parameters to return values from procedures
+- Use INOUT parameters to pass and modify values
 
 ### Database Structure Created
 - **Database:** `demo_db`
@@ -109,6 +111,78 @@ CALL GetNamedCustomersWithEmail('Alice');
 ```
 
 **Result:** Returns customers matching the name pattern who also have an email address.
+
+---
+
+## Step 5: Create a Stored Procedure with OUT Parameter
+
+### Create a Procedure with OUT Parameter
+```sql
+DELIMITER //
+
+CREATE PROCEDURE GetCustomerCount(OUT totalCount INT)
+BEGIN
+    SELECT COUNT(*) INTO totalCount FROM customers;
+END //
+
+DELIMITER ;
+```
+
+### Call the Procedure with OUT Parameter
+```sql
+CALL GetCustomerCount(@count);
+SELECT @count AS TotalCustomers;
+```
+
+**Result:** The procedure stores the count of customers into the `@count` variable, which you can then retrieve with a SELECT statement. Returns `3` for our sample data.
+
+---
+
+## Step 6: Create a Stored Procedure with INOUT Parameter
+
+### Create a Procedure with INOUT Parameter
+```sql
+DELIMITER //
+
+CREATE PROCEDURE DoubleValue(INOUT num INT)
+BEGIN
+    SET num = num * 2;
+END //
+
+DELIMITER ;
+```
+
+### Call the Procedure with INOUT Parameter
+```sql
+SET @myValue = 5;
+CALL DoubleValue(@myValue);
+SELECT @myValue AS DoubledValue;
+```
+
+**Result:** The variable `@myValue` is passed in with value `5`, modified inside the procedure, and returned as `10`.
+
+### Practical INOUT Example with Customer Data
+```sql
+DELIMITER //
+
+CREATE PROCEDURE AdjustAndCountCustomers(INOUT threshold INT)
+BEGIN
+    DECLARE customerCount INT;
+    SELECT COUNT(*) INTO customerCount FROM customers WHERE id >= threshold;
+    SET threshold = customerCount;
+END //
+
+DELIMITER ;
+```
+
+### Call the Practical INOUT Procedure
+```sql
+SET @minId = 2;
+CALL AdjustAndCountCustomers(@minId);
+SELECT @minId AS CustomersAboveThreshold;
+```
+
+**Result:** Passes in `2` as the minimum ID threshold, then overwrites the variable with the count of customers meeting that criteria. Returns `2` (Bob and Charlie).
 
 ---
 
