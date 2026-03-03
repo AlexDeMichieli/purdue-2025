@@ -1,0 +1,22 @@
+[
+  {
+    "id": "a2f2d6b1-4c2b-5c2f-0d2b-2b2c2d2e2f20",
+    "firstName": "John Alex",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "department": "HR",
+    "position": "HR Manager",
+    "salary": 92000,
+    "dateOfJoining": "2021-07-01"
+  },
+  {
+    "id": "c3a3e7c2-5d3c-6d3a-1e3c-3c3d3e3f3a31",
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "email": "alice.johnson@example.com",
+    "department": "Marketing",
+    "position": "Marketing Analyst",
+    "salary": 78000,
+    "dateOfJoining": "2023-01-10"
+  }
+]
